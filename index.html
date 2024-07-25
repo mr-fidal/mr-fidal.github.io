@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Bank Account Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc; 
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #003b6f;
+            color: #ffffff;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            flex: 1; 
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 60px;
+            height: 5px;
+            background: #003b6f; 
+            border-radius: 3px;
+            transform: translateX(-50%);
+        }
+
+        h2 {
+            text-align: center;
+            color: #003b6f; 
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 15px;
+        }
+
+        input {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #003b6f;
+            box-shadow: 0 0 8px rgba(0, 59, 111, 0.2);
+            outline: none;
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background-color: #003b6f;
+            color: #ffffff;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #00274d; 
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            background-color: #001f3f; 
+            transform: translateY(1px);
+        }
+
+        .note {
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .note a {
+            color: #003b6f;
+            text-decoration: none;
+        }
+
+        .note a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #003b6f; 
+            color: #ffffff;
+            padding: 15px 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px auto;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input, button {
+                font-size: 15px;
+            }
+
+            button {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            input, button {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MrFidal Bank of India</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Enter Your Bank Account Details</h2>
+            <form action="#" method="post" class="form">
+                <label for="accountHolder">Account Holder Name:</label>
+                <input type="text" id="accountHolder" name="accountHolder" placeholder="John Doe" required>
+                
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="accountNumber" placeholder="1234567890" required>
+                
+                <label for="routingNumber">Routing Number:</label>
+                <input type="text" id="routingNumber" name="routingNumber" placeholder="987654321" required>
+                
+                <label for="bankName">Bank Name:</label>
+                <input type="text" id="bankName" name="bankName" placeholder="State Bank of India" required>
+                
+                <button type="submit">Submit</button>
+            </form>
+            <div class="note">
+                <p>Need help? Visit our <a href="#">Help Center</a>.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 MrFidal Bank of India. All rights reserved.</p>
+    </footer>
+</body>
+</html>
